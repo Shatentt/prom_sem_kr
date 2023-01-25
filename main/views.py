@@ -43,7 +43,7 @@ def add_snippet_page(request):
     else:
         context['addform'] = AddSnippetForm(
             initial={
-                'user': 'AnonymousUser',
+                'user': request.user,
             }
         )
     return render(request, 'pages/add_snippet.html', context)
